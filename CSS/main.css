@@ -213,8 +213,8 @@ textarea {
   color: var(--backgraund-btn-color);
 }
 
-.connect__item--email,
-.connect__item--smart {
+.connect__email,
+.connect__smart {
   fill: currentColor;
   margin-right: 10px;
 }
@@ -417,15 +417,12 @@ textarea {
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
-}
-
-.head-site__logo--web,
-.footer__logo--web {
-  color: #2196f3;
-}
-
-.head-site__logo {
   color: #000000;
+}
+
+.head-site__web,
+.footer__web {
+  color: #2196f3;
 }
 
 .footer__logo {
@@ -887,7 +884,7 @@ textarea {
   position: relative;
 }
 
-.servise__text-position {
+.service__position {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -907,7 +904,7 @@ textarea {
   background-color: rgba(47, 48, 58, 0.8);
 }
 
-.servise__text {
+.service__text {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
