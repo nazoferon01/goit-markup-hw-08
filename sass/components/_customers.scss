@@ -1,37 +1,40 @@
-/* секция Постоянные клиенты */
-.customers__title {
-    margin-bottom: 50px;
-    color: var(--txt-color);
-}
-
-.customers__list {
+.client__list {
     display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
 }
 
-.customers__item:nth-child(n + 2) {
-    margin-left: var(--card-set-gap);
+.client__item {
+margin: 15px;
+@media screen and (max-width:$mobile-max), (min-width: $mobile) {
+    width: calc((100% - 2 * 30px) / 2);
 }
 
-.customers__link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 170px;
-    height: 92px;
-    border: 1px solid var(--team-social-link);
-    border-radius: 4px;
-    color: var(--team-social-link);
-    transition: color var(--animation-transition), border var(--animation-transition);
-
-    &:hover,
-    &:focus {
-        border: 1px solid var(--backgraund-btn-color);
-        color: var(--backgraund-btn-color);
-    }
+@media screen and (min-width: $tablet) {
+    width: calc((100% - 3 * 30px) / 3);
 }
 
-.customers__svg {
-    width: 106px;
-    height: 60px;
-    fill: currentColor;
+@media screen and (min-width: $desktop) {
+    width: calc((100% - 6 * 30px) / 6);
+}
+}
+
+.client__link {
+display: flex;
+justify-content: center;
+align-items: center;
+
+height: 92px;
+
+border: 1px solid #afb1b8;
+border-radius: 4px;
+fill: getFill('primary-fill');
+
+transition: fill $animation-transition, border-color $animation-transition;
+
+&:hover,
+&:focus {
+    fill: getFill('blue-fill');
+    border-color: getColorText('hover');
+}
 }

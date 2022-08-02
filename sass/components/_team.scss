@@ -1,78 +1,85 @@
-/*Секція наша команда*/
 .team {
-  text-align: center;
-  background-color: var(--backgraund--add-color);
+  background: #f5f4fa;
 }
 
-.team-title {
-  margin-bottom: 50px;
-  color: var(--txt-color);
+.team__list {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -15px;
 }
 
-.team-list {
-  display: flex;
-}
+.team__item {
+  margin: 15px;
 
-.team-item {
-  background: #ffffff;
+  background-color: getBgc('primary-white');
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
+      0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+
+  @media screen and (max-width: $mobile-max), (min-width: $mobile) {
+      width: calc((100% - 1 * 30px) / 1);
+  }
+  
+  @media screen and (min-width: $tablet) {
+      width: calc((100% - 2 * 30px) / 2);
+  }
+  
+  @media screen and (min-width: $desktop) {
+      width: calc((100% - 4 * 30px) / 4);
+  }
 }
 
-.team-item+.team-item {
-  margin-left: 30px;
-}
-
-.team-wraper {
+.team__wrap {
   padding-top: 30px;
+  padding-right: 32px;
   padding-bottom: 30px;
+  padding-left: 32px;
 }
 
-.team-name {
+.team__subtitle {
   font-weight: 500;
   font-size: 16px;
-  line-height: 1.19;
-  letter-spacing: var(--primary-letter-spacing);
-  color: var(--txt-color);
-}
-
-.team-prof {
-  font-size: 16px;
-  line-height: 1.19;
+  line-height: 19px;
   text-align: center;
-  letter-spacing: var(--primary-letter-spacing);
-  margin-top: 10px;
+  letter-spacing: $primary-letter-spacing;
+  color: getColorText('text-black');
 }
 
-/* Team social link */
-.team-icon {
+.team__text {
+  margin-top: 10px;
+
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: $primary-letter-spacing;
+}
+
+/* Ссылки на социальные сети */
+.team__social-list {
   display: flex;
   justify-content: center;
   margin-top: 16px;
 }
 
-.icon-list:nth-child(n + 2) {
-  margin-left: 10px;
+.team__social-item:not(:last-child) {
+  margin-right: 10px;
 }
 
-.team-link {
+.team__social-link {
   display: flex;
-  align-items: center;
-  justify-content: center;
   width: 44px;
   height: 44px;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
-  color: var(--team-social-link);
-  transition: color var(--animation-transition), background var(--animation-transition);
-}
 
-.team-link:hover,
-.team-link:focus {
-  background-color: var(--backgraund-btn-color);
-  color: var(--additional--color);
-}
+  fill: getFill("social-fill");
 
-.team-social-icon {
-  fill: currentColor;
+  transition: fill $animation-transition, background-color $animation-transition;
+
+  &:hover,
+  &:focus {
+      fill: getFill('white-fill');
+      background-color: getBgc('bgc-blue');
+  }
 }

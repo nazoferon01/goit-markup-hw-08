@@ -1,34 +1,116 @@
-.title-section {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
-  text-align: center;
-  letter-spacing: var(--primary-letter-spacing);
+body {
+  background-color: getBgc('primary-white');
+  font-family: $primary-font;
+  font-size: 14px;
+  line-height: 1.14;
+  color: getColorText('primary');
 }
 
-.button {
+body.modal-open {
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+textarea {
+  resize: none;
+}
+
+input,
+textarea {
+  outline: none;
+}
+
+/* Общие стили */
+.title-section {
+  margin-bottom: 50px;
+
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  letter-spacing: $primary-letter-spacing;
+
+  color: getColorText('title');
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   font-family: inherit;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+
   cursor: pointer;
-  border-color: transparent;
+  border: none;
+  color: getColorText('button');
+  background-color: getBgc('bgc-blue');
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-  color: var(--additional--color);
-  background-color: var(--blue-bgc);
 }
 
 .container {
-  width: 1200px;
-  margin: 0 auto;
-
-  padding-left: 15px;
+  margin-left: auto;
+  margin-right: auto;
   padding-right: 15px;
+  padding-left: 15px;
+
+  @media screen and (min-width: 480px) {
+      width: $mobile;
+  }
+
+  @media screen and (min-width: 768px) {
+      width: $tablet;
+  }
+
+  @media screen and (min-width: 1200px) {
+      width: $desktop;
+  }
 }
 
 .section {
-  padding-top: 94px;
-  padding-bottom: 94px;
+
+  @media screen and (max-width: $mobile-max),
+  (min-width: $mobile) {
+      padding-top: 60px;
+      padding-bottom: 60px;
+  }
+
+  @media screen and (min-width: 1200px) {
+      padding-top: 94px;
+      padding-bottom: 94px;
+  }
 }
 
-/*приховані заголовки*/
+/* Cкрытый заголовко h2 */
 .visually-hidden {
   position: absolute;
   width: 1px;

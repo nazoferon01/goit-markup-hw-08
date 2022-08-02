@@ -1,42 +1,56 @@
 .about {
-    padding-bottom: 0px;
+    @media screen and (min-width: $desktop) {
+        padding-bottom: 0;
+    }
 }
 
 .about__list {
     display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
 }
 
 .about__item {
-    width: 270px;
+    @media screen and (max-width: $mobile-max), (min-width: $mobile) {
+        width: calc((100% - 1 * 30px) / 1);
+        margin: 15px;
+    }
 
-    &+& {
-        margin-left: 30px;
+    @media screen and (min-width: $tablet) {
+        width: calc((100% - 2 * 30px) / 2);
+        
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: calc((100% - 4 * 30px) / 4);
     }
 }
-
-
-
-.about__svg {
-    display: flex;
-    min-width: 270px;
-    min-height: 120px;
-    justify-content: center;
-    align-items: center;
-    background-color: #f5f4fa;
-    margin-bottom: 30px;
-}
-
+/* Основная часть секции Наши преимущества*/
 .about__title {
-    font-weight: 700;
+    font-weight: bold;
     font-size: 14px;
-    line-height: 1.14;
-    letter-spacing: var(--primary-letter-spacing);
+    line-height: 16px;
     text-transform: uppercase;
-    color: var(--txt-color);
-    margin-bottom: 10px;
+    letter-spacing: $primary-letter-spacing;
+    color: getColorText('title');
 }
 
 .about__text {
+    margin-top: 10px;
+
     font-size: 14px;
-    line-height: 1.71;
+    line-height: 24px;
+    letter-spacing: $primary-letter-spacing;
+}
+
+.about__icon-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 120px;
+    margin-bottom: $card-set-gap;
+
+    background-color: #f5f4fa;
+    border-radius: 4px;
 }

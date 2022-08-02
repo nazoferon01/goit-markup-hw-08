@@ -1,22 +1,24 @@
-.service__title {
-  color: var(--txt-color);
-  margin-bottom: 50px;
+.services {
+  @media screen and (max-width: $desktop-max) {
+      display: none;
+  }
 }
 
-.service__list {
+.services__list {
   display: flex;
-
 }
 
-.service__item+.service__item {
-  margin-left: 30px;
+.services__item:not(:last-child) {
+  margin-right: 30px;
 }
 
-.service__card {
+/*Чим ми займаємося
+*/
+.services__card {
   position: relative;
 }
 
-.service__position {
+.services__wrap-position {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -27,15 +29,14 @@
   padding-bottom: 27px;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
+  color: getColorText('text-white');
   background-color: rgba(47, 48, 58, 0.8);
 }
 
-.service__text {
+.services__text {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
-  text-align: center;
-  letter-spacing: var(--primary-letter-spacing);
+  letter-spacing: $primary-letter-spacing;
   text-transform: uppercase;
 }

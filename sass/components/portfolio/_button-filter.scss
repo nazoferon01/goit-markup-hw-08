@@ -1,0 +1,50 @@
+.filter-project {
+  display: flex;
+  @media screen and (max-width: $tablet-max) {
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+  }
+  
+  @media screen and (min-width: $tablet) {
+      justify-content: center;
+      margin-bottom: 30px;
+  }
+  @media screen and (min-width: $desktop) {
+      margin-bottom: 50px;
+  }
+}
+
+.filter-project__item:not(:nth-child(n + 4)) {
+  @media screen and (max-width: $tablet-max) {
+      margin-bottom: 15px;
+  }
+}
+.filter-project__item:not(:last-child) {
+  margin-right: 8px;
+}
+
+.filter-project__btn {
+  padding-top: 6px;
+  padding-right: 22px;
+  padding-bottom: 6px;
+  padding-left: 22px;
+  border-radius: 4px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: $primary-letter-spacing;
+  color: getColorText('text-black');
+  background-color: #f5f4fa;
+
+  transition: color $animation-transition, background-color $animation-transition,
+      box-shadow $animation-transition;
+
+  &:hover,
+  &:focus {
+      color: getColorText('text-white');
+      background-color: getBgc('bgc-blue');
+      box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
+}

@@ -1,16 +1,35 @@
+/* Логотип */
 .logo {
-  font-family: var(--secondary-font);
-  font-weight: 700;
+  font-family: $logo-font;
+  font-weight: bold;
   font-size: 26px;
-  line-height: 1.19;
+  line-height: 1.2;
+  letter-spacing: $primary-letter-spacing;
+}
+
+.page-header__logo {
+  @media screen and (max-width: $tablet-max) {
+      padding-top: 14px;
+      padding-bottom: 14px;
+  }
+
+  @media screen and (min-width: $tablet) {
+      margin-right: 80px;
+  }
+  
+  @media screen and (min-width: $desktop){
+      margin-right: 93px;
+  }
+}
+
+.logo-web {
+  color: getColorText('hover');
+}
+
+.logo-studio {
   color: #000000;
 }
 
-.head-site__web,
-.footer__web {
-  color: #2196f3;
-}
-
-.footer__logo {
-  color: #ffffff;
+.footer__logo-studio {
+  color: getColorText('text-white');
 }

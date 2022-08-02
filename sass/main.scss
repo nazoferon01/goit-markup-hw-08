@@ -1,14 +1,20 @@
 @import './utils/variables';
-@import './utils/reset';
+@import './utils/breakpoints';
 @import './utils/common';
+
+// Components
+
 @import './components/header';
 @import './components/footer';
 @import './components/logo';
 @import './components/hero';
+@import './components/about';
+@import './components/service';
+@import './components/team';
+@import './components/customers';
 @import './components/modal';
-@import './components/portfolio/filter';
+
+// Portfolio
+
+@import './components/portfolio/button-filter';
 @import './components/portfolio/portfolio';
-@import "./components/about";
-@import "./components/service";
-@import "./components/team";
-@import "./components/customers";
